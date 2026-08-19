@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -517,4 +518,525 @@ footer {
     .footer-box {
         text-align: center;
     }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #FAF9FE;
+    color: #333;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* header */
+
+header {
+    width: 100%;
+    background: #0077b6;
+}
+
+.navbar {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0px;
+    width: 90%;
+}
+
+.logo {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f7d111;
+}
+
+.username {
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    border-radius: 40px;
+    background: #f7d111;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* hero section */
+
+.hero {
+    width: 90%;
+    margin: 62px auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.hero-text span {
+    color: #0077b6;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    background: #0077b6;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #005b8c;
+}
+
+.hero-img img {
+    border-radius: 15px;
+}
+
+/* overview section */
+
+.overview-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    padding: 40px 20px;
+    background-color: #0077b6;
+    color: #fff;
+    align-items: center;
+}
+
+.overview-section h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+.overview-section div {
+    align-items: center;
+    text-align: center;
+}
+
+.overview-section div h3 {
+    font-size: 1.5rem;
+}
+
+/* booking section */
+
+.booking {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 30px;
+}
+
+.services {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+.heading h1 {
+    font-size: 2.2rem;
+    color: #222;
+}
+
+.heading p {
+    color: #777;
+    margin-bottom: 13px;
+}
+
+#serviceList {
+    margin: 25px 0px;
+}
+
+.service-card {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 15px;
+    /* gap: 60px; */
+}
+
+.service-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.service-info span {
+    color: #1987c3;
+    font-weight: 600;
+}
+
+.add-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    background: #c4ffc4;
+    color: green;
+}
+
+.add-btn:hover {
+    background-color: green;
+    color: #fff;
+}
+
+.remove-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    background: #ffc0c0;
+    color: red;
+}
+
+.remove-btn:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.cart-info {
+    margin-top: 25px;
+    color: #1987c3;
+}
+
+.cart-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    height: 340px;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cart h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.table-wrap {
+    flex: 1;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+th {
+    text-align: left;
+    color: #555;
+}
+
+td {
+    padding: 12px 0;
+    color: #555;
+}
+
+.empty {
+    text-align: center;
+    color: #1987c3;
+    padding: 40px 0;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 2px solid #ccc;
+}
+
+.total h3 {
+    color: #1987c3;
+}
+
+.book-box {
+    background: #fff;
+    height: 300px;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+.book-box div {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.book-box h2 {
+    margin-bottom: 15px;
+}
+
+.book-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 8px;
+}
+
+.book-box button {
+    border: none;
+    background: #0077b6;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.book-box button:hover {
+    background: #005b8c;
+}
+
+#message {
+margin-top: 18px;
+color: green;
+text-align: center;
+font-weight: 600;
+}
+
+/* Quality Description Section */
+
+.quality-desc {
+    display: flex;
+    justify-content: space-evenly;
+    background: #fff;
+    /* align-items: center; */
+    gap: 30px;
+    padding: 40px;
+}
+
+.quality-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.quality-card img {
+    width: 180px;
+}
+
+/* newsletter section */
+
+.newsletter-section {
+    background: #0077b6;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.newsletter-section h2 {
+    font-size: 2.5rem;
+}
+
+.newsletter-input input {
+    padding: 10px 40px;
+    margin-bottom: 15px;
+    outline: none;
+    border: none;
+    background: #8bc5e4;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter-input input::placeholder {
+    color: #fff;
+}
+
+.newsletter-section button {
+    background: #f1f1f1;
+    padding: 10px 30px;
+    width: 48%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: #0077b6;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.newsletter-section button:hover {
+    background: #f4f4f4;
+}
+
+#newsletterMessage {
+margin-top: 18px;
+color: white;
+text-align: center;
+font-weight: 600;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #0068a0;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 30px;
+    gap: 20px;
+}
+
+
+.footer-box h2 {
+    font-size: 2rem;
+}
+
+.footer-box h3 {
+    font-weight: 500;
+}
+
+.footer-box p {
+    color: #f1f1f1;
+}
+
+.footer-box a {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.footer-box i {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+
+/* responsive */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .overview-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .booking {
+        flex-direction: column;
+    }
+
+    .service-card {
+        display: block;
+        gap: 10px;
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .service-info {
+        margin-bottom: 10px;
+    }
+
+    .quality-desc {
+        flex-direction: column;
+    }
+
+    .newsletter-section {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        padding: 40px 30px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-box {
+        text-align: center;
+    }
+>>>>>>> 84c28eb15082116d0550aec0f6abefa5c5558b74
 }

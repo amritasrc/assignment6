@@ -136,3 +136,6 @@ const PORT = 3000;
 server.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
+
+
+//check readme for code explanation, logs/screenshots, etc.

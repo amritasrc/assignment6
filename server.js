@@ -1,38 +1,99 @@
 // import http module
 const http = require('http');
+//import file system module
+const fs = require('fs');
 
 // create an http server
 const app = http.createServer((req, res) => {
 
     // check which route the user is requesting
     if (req.url === '/') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
+        // read the html file
+        fs.readFile('./home.html', (err, data) => {
 
-        // send the home page response
-        res.end('<h1>Home Page</h1>');
+            // handle error
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            // send html file
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+        });
     }
 
     // about route
     else if (req.url === '/about') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
+        // read the html file
+        fs.readFile('./about.html', (err, data) => {
 
-        // send about page response
-        res.end('<h1>About Page</h1>');
+            // handle error
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            // send html file
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+        });
     }
 
     // contact route
     else if (req.url === '/contact') {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
+        // read the html file
+        fs.readFile('./contact.html', (err, data) => {
 
-        // send contact page response
-        res.end('<h1>Contact Page</h1>');
+            // handle error
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            // send html file
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+        });
     }
+
+    // css file
+    else if (req.url === '/style.css') {
+
+        fs.readFile('./style.css', (err, data) => {
+
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            res.writeHead(200, { 'Content-Type': 'text/css' });
+            res.end(data);
+        });
+    }
+
 
     // if the route does not exist
     else {
-        // send 404 error
-        res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.end('<h1>404 - Page Not Found</h1>');
+
+        // read the html file
+        fs.readFile('./404.html', (err, data) => {
+
+            // handle error
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            // send 404 html file
+            res.writeHead(404, { 'Content-Type': 'text/html' });
+            res.end(data);
+        });
     }
 });
 

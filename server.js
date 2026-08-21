@@ -76,6 +76,82 @@ const app = http.createServer((req, res) => {
         });
     }
 
+    // image files
+    else if (req.url === '/images/hero-img.jpg') {
+
+        fs.readFile('./images/hero-img.jpg', (err, data) => {
+
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            res.writeHead(200, { 'Content-Type': 'image/jpg' });
+            res.end(data);
+        });
+    }
+
+    else if (req.url === '/images/affordable-prices-icon.png') {
+
+        fs.readFile('./images/affordable-prices-icon.png', (err, data) => {
+
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            res.writeHead(200, { 'Content-Type': 'image/jpg' });
+            res.end(data);
+        });
+    }
+    else if (req.url === '/images/washing-machine-icon.png') {
+
+        fs.readFile('./images/washing-machine-icon.png', (err, data) => {
+
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            res.writeHead(200, { 'Content-Type': 'image/jpg' });
+            res.end(data);
+        });
+    }
+
+    else if (req.url === '/images/customer-support.png') {
+
+        fs.readFile('./images/customer-support.png', (err, data) => {
+
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            res.writeHead(200, { 'Content-Type': 'image/jpg' });
+            res.end(data);
+        });
+    }
+
+
+    else if (req.url === '/images/fast-delivery.png') {
+
+        fs.readFile('./images/fast-delivery.png', (err, data) => {
+
+            if (err) {
+                res.writeHead(500, { 'Content-Type': 'text/plain' });
+                res.end('Something went wrong');
+                return;
+            }
+
+            res.writeHead(200, { 'Content-Type': 'image/jpg' });
+            res.end(data);
+        });
+    }
+
 
     // if the route does not exist
     else {

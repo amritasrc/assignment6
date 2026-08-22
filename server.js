@@ -35,7 +35,7 @@ function serveFile(res, filePath, contentType, statusCode = 200) {
 // Create an HTTP server
 const app = http.createServer((req, res) => {
 
-    // Log every incoming request in the terminal
+    // Log every request in the terminal
     console.log(`${req.method} ${req.url}`);
 
 

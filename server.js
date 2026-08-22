@@ -1,182 +1,103 @@
-// import http module
+// Import the HTTP module
 const http = require('http');
-//import file system module
+
+// Import the File System module
 const fs = require('fs');
 
-// create an http server
+
+// Reusable function to read and serve files
+function serveFile(res, filePath, contentType, statusCode = 200) {
+
+    fs.readFile(filePath, (err, data) => {
+
+        // Handle file reading errors
+        if (err) {
+            console.error(`Error reading file: ${filePath}`, err);
+
+            res.writeHead(500, {
+                'Content-Type': 'text/plain'
+            });
+
+            res.end('Something went wrong while loading the file.');
+            return;
+        }
+
+        // Send the file to the browser
+        res.writeHead(statusCode, {
+            'Content-Type': contentType
+        });
+
+        res.end(data);
+    });
+}
+
+
+// Create an HTTP server
 const app = http.createServer((req, res) => {
 
-    // check which route the user is requesting
+    // Log every incoming request in the terminal
+    console.log(`${req.method} ${req.url}`);
+
+
+    // Home route
     if (req.url === '/') {
-        // read the html file
-        fs.readFile('./home.html', (err, data) => {
-
-            // handle error
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            // send html file
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
+        serveFile(res, './home.html', 'text/html');
     }
 
-    // about route
+
+    // About route
     else if (req.url === '/about') {
-        // read the html file
-        fs.readFile('./about.html', (err, data) => {
-
-            // handle error
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            // send html file
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
+        serveFile(res, './about.html', 'text/html');
     }
 
-    // contact route
+
+    // Contact route
     else if (req.url === '/contact') {
-        // read the html file
-        fs.readFile('./contact.html', (err, data) => {
-
-            // handle error
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            // send html file
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
+        serveFile(res, './contact.html', 'text/html');
     }
 
-    // css file
+
+    // CSS file
     else if (req.url === '/style.css') {
-
-        fs.readFile('./style.css', (err, data) => {
-
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            res.writeHead(200, { 'Content-Type': 'text/css' });
-            res.end(data);
-        });
+        serveFile(res, './style.css', 'text/css');
     }
 
-    // image files
     else if (req.url === '/images/hero-img.jpg') {
-
-        fs.readFile('./images/hero-img.jpg', (err, data) => {
-
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            res.writeHead(200, { 'Content-Type': 'image/jpg' });
-            res.end(data);
-        });
+        serveFile(res, './images/hero-img.jpg', 'image/jpeg');
     }
 
     else if (req.url === '/images/affordable-prices-icon.png') {
-
-        fs.readFile('./images/affordable-prices-icon.png', (err, data) => {
-
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            res.writeHead(200, { 'Content-Type': 'image/jpg' });
-            res.end(data);
-        });
+        serveFile(res, './images/affordable-prices-icon.png', 'image/png');
     }
+
+
     else if (req.url === '/images/washing-machine-icon.png') {
-
-        fs.readFile('./images/washing-machine-icon.png', (err, data) => {
-
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            res.writeHead(200, { 'Content-Type': 'image/jpg' });
-            res.end(data);
-        });
+        serveFile(res, './images/washing-machine-icon.png', 'image/png');
     }
+
 
     else if (req.url === '/images/customer-support.png') {
-
-        fs.readFile('./images/customer-support.png', (err, data) => {
-
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            res.writeHead(200, { 'Content-Type': 'image/jpg' });
-            res.end(data);
-        });
+        serveFile(res, './images/customer-support.png', 'image/png');
     }
 
 
     else if (req.url === '/images/fast-delivery.png') {
-
-        fs.readFile('./images/fast-delivery.png', (err, data) => {
-
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            res.writeHead(200, { 'Content-Type': 'image/jpg' });
-            res.end(data);
-        });
+        serveFile(res, './images/fast-delivery.png', 'image/png');
     }
 
 
-    // if the route does not exist
+    // Handle unknown routes
     else {
-
-        // read the html file
-        fs.readFile('./404.html', (err, data) => {
-
-            // handle error
-            if (err) {
-                res.writeHead(500, { 'Content-Type': 'text/plain' });
-                res.end('Something went wrong');
-                return;
-            }
-
-            // send 404 html file
-            res.writeHead(404, { 'Content-Type': 'text/html' });
-            res.end(data);
-        });
+        serveFile(res, './404.html', 'text/html', 404);
     }
 });
 
-// define port number
+
+// Define the port number
 const PORT = 3000;
 
-// start the server and listen for requests on the specified port
+
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Server is up and running on http://localhost:${PORT}`);
+    console.log(`Server is running at http://localhost:${PORT}`);
 });
